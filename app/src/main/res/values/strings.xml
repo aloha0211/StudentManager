@@ -1,3 +1,31 @@
 <resources>
     <string name="app_name">StudentManager</string>
+    <string name="action_settings">Settings</string>
+    <string name="danhsachsv">DANH SÁCH SINH VIÊN</string>
+    <string name="themsv">THÊM SINH VIÊN</string>
+    <string name="update_student">CẬP NHẬT SINH VIÊN</string>
+    <string name="masv">Mã SV</string>
+    <string name="ma_sv">Mã SV:</string>
+    <string name="tensv">Tên SV</string>
+    <string name="ten_sv">Tên SV:</string>
+    <string name="ngaysinh">Ngày sinh</string>
+    <string name="gt">GT</string>
+    <string name="gioitinh">Giới tính:</string>
+    <string name="nam">Nam</string>
+    <string name="nu">Nữ</string>
+    <string name="ngay_sinh">Ngày sinh:</string>
+    <string name="xoa_trang">XÓA TRẮNG</string>
+    <string name="luu_sv">LƯU SINH VIÊN</string>
+    <string name="saved">Đã lưu</string>
+    <string name="error">Lỗi!</string>
+    <string name="updated">Đã cập nhật</string>
+    <string name="student_exists">Mã SV đã tồn tại</string>
+    <string name="delete">Xóa</string>
+    <string name="deleted">Đã xóa</string>
+    <string name="no">Không</string>
+    <string name="yes">Có</string>
+    <string name="delete_message">Xóa sinh viên</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="search">Tìm kiếm</string>
+    <string name="enter_student_name">Nhập tên SV</string>
 </resources>
