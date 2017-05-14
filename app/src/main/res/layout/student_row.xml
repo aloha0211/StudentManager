@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/tvOrder"
+        android:layout_width="@dimen/width_small_column"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/activity_vertical_padding"
+        android:paddingBottom="@dimen/activity_vertical_padding"
+        android:text="STT"
+        android:textColor="@color/colorWhite"
+        android:gravity="center_horizontal"/>
+
+    <TextView
+        android:layout_width="@dimen/divider_height"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/activity_vertical_padding"
+        android:paddingBottom="@dimen/activity_vertical_padding"/>
+
+    <TextView
+        android:id="@+id/tvId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/masv"
+        android:textColor="@color/colorWhite"
+        android:gravity="center_horizontal"
+        android:paddingTop="@dimen/activity_vertical_padding"
+        android:paddingBottom="@dimen/activity_vertical_padding"/>
+
+    <TextView
+        android:layout_width="@dimen/divider_height"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/activity_vertical_padding"
+        android:paddingBottom="@dimen/activity_vertical_padding"/>
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/activity_vertical_padding"
+        android:paddingBottom="@dimen/activity_vertical_padding"
+        android:layout_weight="1"
+        android:text="@string/tensv"
+        android:textColor="@color/colorWhite"
+        android:gravity="center_horizontal"/>
+
+    <TextView
+        android:layout_width="@dimen/divider_height"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/activity_vertical_padding"
+        android:paddingBottom="@dimen/activity_vertical_padding"/>
+
+    <TextView
+        android:id="@+id/tvBirthday"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/activity_vertical_padding"
+        android:paddingBottom="@dimen/activity_vertical_padding"
+        android:layout_weight="1"
+        android:text="@string/ngaysinh"
+        android:textColor="@color/colorWhite"
+        android:gravity="center_horizontal"/>
+
+    <TextView
+        android:layout_width="@dimen/divider_height"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/activity_vertical_padding"
+        android:paddingBottom="@dimen/activity_vertical_padding"/>
+
+    <ImageView
+        android:id="@+id/ivGender"
+        android:layout_width="@dimen/width_small_column"
+        android:layout_height="match_parent"
+        android:paddingTop="@dimen/activity_vertical_padding"
+        android:paddingBottom="@dimen/activity_vertical_padding"
+        android:src="@drawable/boyicon" />
+
+</LinearLayout>
