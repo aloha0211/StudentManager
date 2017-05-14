@@ -3,10 +3,13 @@ package com.example.administrator.studentmanager.activity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -20,7 +23,7 @@ import com.example.administrator.studentmanager.model.Student;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListStudentsActivity extends AppCompatActivity {
+public class ListStudentsActivity extends AppCompatActivity implements SearchView.OnQueryTextListener {
 
     private ListView lvListStudents;
     private List<Student> mListStudents;
@@ -43,6 +46,17 @@ public class ListStudentsActivity extends AppCompatActivity {
         addEventListener();
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        MenuItem searchItem = menu.findItem(R.id.action_search);
+        SearchView searchView = (SearchView) MenuItemCompat.getActionView(searchItem);
+        searchView.setQueryHint(getString(R.string.enter_student_name));
+        searchView.setOnQueryTextListener(this);
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
     public void refreshListStudentsData() {
         DbHelper dbHelper = new DbHelper(this, null);
         mListStudents.clear();
@@ -62,7 +76,7 @@ public class ListStudentsActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
                 Student student = mListStudents.get(position);
                 Intent i = new Intent(ListStudentsActivity.this, StudentEditActivity.class);
-                i.putExtra(DbHelper.COLUMN_ID,student.getId());
+                i.putExtra(DbHelper.COLUMN_ID, student.getId());
                 startActivity(i);
 
             }
@@ -100,4 +114,18 @@ public class ListStudentsActivity extends AppCompatActivity {
         b.create().show();
     }
 
+    @Override
+    public boolean onQueryTextSubmit(String query) {
+        return false;
+    }
+
+    @Override
+    public boolean onQueryTextChange(String newText) {
+        mSearchText = newText;
+        DbHelper dbHelper = new DbHelper(this, null);
+        mListStudents.clear();
+        mListStudents.addAll(dbHelper.searchStudent(newText));
+        mAdapter.notifyDataSetChanged();
+        return true;
+    }
 }
